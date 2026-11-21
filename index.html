@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unimate Compiler</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%236c63ff'/%3E%3Cpath d='M7 8h18v4H7zm0 6h18v4H7zm0 6h18v4H7z' fill='white'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Unimate home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 38 38"><path d="M7 9h24v5H7zM7 16h24v5H7zM7 23h24v6H7z"/><path class="mark-accent" d="M12 12h14v2H12zM12 19h14v2H12zM12 26h14v2H12z"/></svg>
+        </span>
+        <span>UNIMATE</span>
+      </a>
+      <nav class="topnav" aria-label="Primary">
+        <a class="active" href="#">Compiler</a>
+        <a href="#">Problems</a>
+        <a href="#">Learn</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button" id="themeButton" title="Toggle theme" aria-label="Toggle theme">
+          <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.5-.04-1-.12-1.5A7 7 0 0 1 12 3Z"/></svg>
+        </button>
+        <button class="avatar" aria-label="Account menu">UJ</button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="editor-card">
+        <div class="editor-toolbar">
+          <div class="file-name">
+            <span class="file-icon" id="fileIcon">C</span>
+            <span id="fileName">main.c</span>
+          </div>
+          <div class="editor-actions">
+            <label class="language-select">
+              <span class="sr-only">Language</span>
+              <select id="language">
+                <option value="c">C</option>
+                <option value="java">Java</option>
+              </select>
+            </label>
+            <button class="tool-button" id="resetButton" title="Reset code">
+              <svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.34 5.66M20 11V5m0 6h-6"/></svg>
+            </button>
+            <button class="run-button" id="runButton">
+              <svg viewBox="0 0 24 24"><path d="m8 5 11 7-11 7V5Z"/></svg>
+              <span>Run</span>
+              <kbd>⌘↵</kbd>
+            </button>
+          </div>
+        </div>
+
+        <div class="editor">
+          <div class="line-numbers" id="lineNumbers" aria-hidden="true">1</div>
+          <textarea id="codeEditor" spellcheck="false" aria-label="Code editor"></textarea>
+        </div>
+      </section>
+
+      <section class="output-card" id="outputCard">
+        <div class="output-header">
+          <div class="output-title">
+            <span>Output</span>
+            <span class="status-dot" id="statusDot"></span>
+          </div>
+          <div class="output-actions">
+            <span id="runTime"></span>
+            <button class="icon-button small" id="copyButton" title="Copy output" aria-label="Copy output">
+              <svg viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
+            </button>
+            <button class="icon-button small" id="clearButton" title="Clear output" aria-label="Clear output">
+              <svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3m3 0-1 13H7L6 7m4 4v5m4-5v5"/></svg>
+            </button>
+          </div>
+        </div>
+        <pre class="output-content" id="output" aria-live="polite">Run your code to see the output here.</pre>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
