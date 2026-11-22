@@ -1,7 +1,6 @@
 
 
-const API_URL = "https://texas-bread-silent-howto.trycloudflare.com/run";
-
+const API_URL = "https://unimate-api.indiasouthcentral.cloudapp.azure.com/run";
 const runButton = document.getElementById("runButton");
 const languageSelect = document.getElementById("language");
 const codeEditor = document.getElementById("code");
